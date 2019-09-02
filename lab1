@@ -22,10 +22,3 @@ select * from tasks;
 
 drop table tasks;
 drop database lab1;
-
-
-
-
-
-
-
