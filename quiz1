@@ -9,8 +9,6 @@ create table kbtu(              --1
     students_count int
 );
 
-select * from mit;
-
 Alter table kbtu add column modereted_at interval;      --2
 Alter table kbtu rename column specialty to specialty_name;     --3
 Alter table kbtu alter column description set not null;     --4
@@ -31,4 +29,5 @@ Insert into mit select * from kbtu where added_date>now();      --12
 Insert into mit values(1, 'FIT', '2019-03-04', false, 'WOW', 200, '1 minute ago') returning id;       --13
 
 Update mit set students_count = students_count + (select(students_count) from kbtu) where mit.specialty_name = (select(specialty_name) from kbtu);      --14
+
 Delete from mit using kbtu where mit.specialty_name = kbtu.specialty_name;      --15
