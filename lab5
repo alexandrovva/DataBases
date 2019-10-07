@@ -42,6 +42,3 @@ select * from orders where customer_id = (select customer_id from customers wher
 select sum(grade) from customers;           --10
 select * from customers where cust_name is not null;            --11
 select max(grade) from customers;           --12
-
-
-
