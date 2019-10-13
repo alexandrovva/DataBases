@@ -28,6 +28,6 @@ create table mit (like kbtu);        --11
 Insert into mit select * from kbtu where added_date>now();      --12
 Insert into mit values(1, 'FIT', '2019-03-04', false, 'WOW', 200, '1 minute ago') returning id;       --13
 
-Update mit set students_count = students_count + (select(students_count) from kbtu) where mit.specialty_name = (select(specialty_name) from kbtu);      --14
+Update mit set students_count = students_count + (select students_count from kbtu where specialty_name = mit.specialty_name);      --14
 
 Delete from mit using kbtu where mit.specialty_name = kbtu.specialty_name;      --15
