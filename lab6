@@ -37,14 +37,3 @@ alter table employees drop column emp_id cascade;               --8
 select first_name, last_name from employees where char_length(first_name)<=5;               --9
 
 alter table employees drop constraint uni_last;                 --10
-
-
-
-
-
-
-
-
-
-
-
