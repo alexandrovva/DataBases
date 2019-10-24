@@ -27,9 +27,3 @@ select * from a left join b using(num) where b.num = 5; --empty
 
 insert into a values(null, 'd');
 select * from a left join b using(num) where a.num is null --only the forth row (<null>, d, <null>), third is <null> cause we dont have matching in the second table'
-
-
-
-
-
-
