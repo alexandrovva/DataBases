@@ -9,8 +9,3 @@ create index subst_index on customer(substring(first_name from 1 for 3));       
 create index join_index on rental(rental_date);                 --5
 
 select tablename as table_name, indexname as index_name from pg_indexes;              --6
-
-
-
-
-
