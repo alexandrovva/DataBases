@@ -39,11 +39,9 @@ grant select on low_grade to junior_dev;
 create view sale_count as                                                                             --7
     select grade, count(salesman_id) from customers group by grade;
 
-create view more_ord as                                                                                                                 --8
+create view more_ord as                                                                                                       --8
     select salesman.name, count(ord_no) from salesman
         inner join orders on salesman.salesman_id = orders.salesman_id group by salesman.name having count(ord_no)>0;
 
 create role intern;                                                     --9
 grant intern to junior_dev;
-
-
