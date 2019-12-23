@@ -1,4 +1,4 @@
-create database final1;
+create database mid1;
 
 create table movies(
     id serial primary key,
